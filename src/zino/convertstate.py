@@ -206,8 +206,6 @@ def set_bfd_sess_addr(linedata: LineData, state: ZinoState):
     ip = linedata.value
     if ":" in ip:
         ip = bytes(int(i, 16) for i in ip.split(":"))
-    if not ip:
-        raise ValueError("No IP value found")
     ip = ip_address(ip)
     device_name = linedata.identifiers[0]
     port = linedata.identifiers[1]
