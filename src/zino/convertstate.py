@@ -60,7 +60,7 @@ def convert(old_state_file: str):
                 set_bfd_sess_addr(linedata, new_state)
             except ValueError:
                 pass
-        if "::bfdSessState" in line:
+        elif "::bfdSessState" in line:
             set_bfd_sess_state(linedata, new_state)
         else:
             pass
